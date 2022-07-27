@@ -4,14 +4,14 @@ from PyQt5.QtWebEngineWidgets import QWebEngineSettings, QWebEngineView
 from PyQt5.QtWidgets import QApplication
 
 
+if not QApplication.instance():
+    QApplication([""])
+
 class QtScreenshot(QWebEngineView):
 
     def __init__(self):
         super().__init__()
-        if not QApplication.instance():
-            self.app = QApplication([""])
-        else:
-            self.app = QApplication.instance()
+        self.app = QApplication.instance()
 
     def capture(self, url, output_file, paginate):
         self.output_file = output_file
