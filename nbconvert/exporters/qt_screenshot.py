@@ -3,15 +3,15 @@ from PyQt5.QtGui import QPageLayout, QPageSize
 from PyQt5.QtWebEngineWidgets import QWebEngineSettings, QWebEngineView
 from PyQt5.QtWidgets import QApplication
 
-
-if not QApplication.instance():
+app = None
+if not app:
     app = QApplication([""])
 
 class QtScreenshot(QWebEngineView):
 
     def __init__(self):
         super().__init__()
-        self.app = QApplication.instance()
+        self.app = app
 
     def capture(self, url, output_file, paginate):
         self.output_file = output_file
