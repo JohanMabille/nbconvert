@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QApplication
 
 
 if not QApplication.instance():
-    QApplication([""])
+    app = QApplication([""])
 
 class QtScreenshot(QWebEngineView):
 
