@@ -11,7 +11,7 @@ class TestQtPNGExporter(ExportersTestsBase):
     """Contains test functions for qtpng.py"""
 
     exporter_class = QtPNGExporter
-
+    
     def test_export(self):
         """
         Can a TemplateExporter export something?
